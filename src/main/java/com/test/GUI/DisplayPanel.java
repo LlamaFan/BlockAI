@@ -11,8 +11,6 @@ public class DisplayPanel extends JPanel {
     public int[][] field;
 
     public DisplayPanel() {
-
-
         setPreferredSize(new Dimension(size, size));
         setBackground(Color.BLACK);
     }
@@ -33,5 +31,19 @@ public class DisplayPanel extends JPanel {
             g.drawLine(i * length, 0, i * length, size);
             g.drawLine(0, i * length, size, i * length);
         }
+    }
+
+    // This will set the blocks on the field
+
+    public int setForm() {
+
+
+        return 0;
+    }
+
+    private boolean checkField() {
+
+
+        return true;
     }
 }
