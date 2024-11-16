@@ -55,7 +55,7 @@ public class DisplayPanel extends JPanel {
             for (int j = 0; j < block[i].length; j++) {
                 if (x + i < squares && y + j < squares) {
                     if (field[i + x][j + y] == 0) {
-                        if (block[i][j] != 0)field[i + x][j + y] = 1;
+                        if (block[i][j] != 0) field[i + x][j + y] = 1;
                         score++;
                     } else return -2;
                 } else return -1;

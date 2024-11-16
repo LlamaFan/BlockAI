@@ -9,19 +9,14 @@ public class Main {
     private static Window window;
     private static Game game;
 
-    private static int[][] form1 = new int[2][3];
+    private static int[][] form1 = {{1, 1, 1}, {1, 0, 0}};
 
     public static void main(String[] args) {
         dp = new DisplayPanel();
         window = new Window(dp);
         game = new Game(dp);
 
-        form1[0][0] = 1;
-        form1[0][1] = 1;
-        form1[0][2] = 1;
-        form1[1][0] = 1;
-
-        game.run();
+        game.start();
         dp.setForm(form1, 2, 3);
         dp.repaint();
     }
