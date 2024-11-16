@@ -16,8 +16,8 @@ public class Main {
         window = new Window(dp);
         game = new Game(dp);
 
-        game.startThread();
         game.initForms("src/Data/BlockForm/pattern.json");
+        game.startThread();
         dp.setForm(game.forms.get(1), 2, 3);
         dp.repaint();
     }
