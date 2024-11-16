@@ -63,4 +63,16 @@ public class DisplayPanel extends JPanel {
 
         return score;
     }
+
+    // Checks if a row is being cleared
+
+    public int checkRows() {
+        for (int i = 0; i < squares; i++) {
+            for (int j = 0; j < squares; j++) {
+                if (field[i][j] == 0) break;
+            }
+        }
+
+        return 0;
+    }
 }
