@@ -42,7 +42,6 @@ public class Game implements Runnable {
     public void initForms(String path) {
         try {
             ObjectMapper om = new ObjectMapper();
-
             forms = om.readValue(new File(path), new TypeReference<ArrayList<int[][]>>() {});
         } catch (IOException e) {
             e.printStackTrace();
