@@ -11,6 +11,8 @@ public class DisplayPanel extends JPanel {
     public int[][] field;
 
     public DisplayPanel() {
+        field = new int[squares][squares];
+
         setPreferredSize(new Dimension(size, size));
         setBackground(Color.BLACK);
     }
@@ -20,6 +22,17 @@ public class DisplayPanel extends JPanel {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
+
+        for (int i = 0; i < squares; i++)
+            for (int j = 0; j < squares; j++) {
+                if (field[i][j] == 0) {
+                    g2.setColor(Color.black);
+                } else {
+                    g2.setColor(Color.white);
+                }
+
+                g2.fillRect(i * length, j * length, length, length);
+            }
 
         g.setColor(Color.darkGray);
         drawLine(g);
@@ -35,15 +48,19 @@ public class DisplayPanel extends JPanel {
 
     // This will set the blocks on the field
 
-    public int setForm() {
+    public int setForm(int[][] block, int x, int y) {
+        int score = 0;
 
+        for (int i = 0; i < block.length; i++)
+            for (int j = 0; j < block[i].length; j++) {
+                if (x + i < squares && y + j < squares) {
+                    if (field[i + x][j + y] == 0) {
+                        if (block[i][j] != 0)field[i + x][j + y] = 1;
+                        score++;
+                    } else return -2;
+                } else return -1;
+            }
 
-        return 0;
-    }
-
-    private boolean checkField() {
-
-
-        return true;
+        return score;
     }
 }
