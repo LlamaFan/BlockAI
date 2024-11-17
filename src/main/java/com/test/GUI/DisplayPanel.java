@@ -64,6 +64,26 @@ public class DisplayPanel extends JPanel {
         return score;
     }
 
+    // Checks if any moves are left
+
+    public boolean movesLeft(int[][] block) {
+        for (int i = 0; i < squares; i++)
+            for (int j = 0; j < squares; j++)
+                if (!checkField(block, i, j)) return false;
+
+        return true;
+    }
+
+    private boolean checkField(int[][] block, int x, int y) {
+        for (int i = 0; i < block.length; i++)
+            for (int j = 0; j < block[i].length; j++)
+                if (x + i < squares && y + j < squares)
+                    if (block[i][j] != 0 && field[i + x][j + y] == 1) return false;
+                else return false;
+
+        return true;
+    }
+
     // Checks if a row is being cleared
 
     public int checkRows() {
