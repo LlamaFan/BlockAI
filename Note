@@ -1,0 +1,1 @@
+Check if move is possible: Every square is checked individually. Optimisation only checking blocks not going over the edge
